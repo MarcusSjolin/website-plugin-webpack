@@ -10,7 +10,6 @@ exports = module.exports = function(app) {
         var webpack = require("webpack");
 
         var webpackConfig = require(assetPath + "/webpack.config")(assetPath, process.cwd(), route)
-        console.log(webpackConfig)
         // returns a Compiler instance
         var compiler = webpack(webpackConfig, function(err, stats) {
             if(err)
@@ -23,16 +22,5 @@ exports = module.exports = function(app) {
 
             res.sendFile(stats.compilation.outputOptions.path + "/" + stats.compilation.outputOptions.filename)
         });
-
-        /*
-        compiler.run(function(err, stats) {
-            console.log(err)
-            if (err) {
-                console.log(err)
-                res.end(JSON.stringify(err))
-            }
-            //console.log(stats)
-           res.sendFile(stats.compilation.outputOptions.path + "/" + stats.compilation.outputOptions.filename)
-        });*/
     })
 }
