@@ -17,7 +17,9 @@ function addPlugin(err, plugin) {
 
     var webpackConfig = require(plugin.path + "/webpack.config")(plugin.path, process.cwd())
     // returns a Compiler instance
-    var compiler = webpack(webpackConfig, function(err, stats) {
+    var compiler = webpack(webpackConfig).watch({
+        
+    },function(err, stats) {
         if(err)
             return console.log(err);
         var jsonStats = stats.toJson();
