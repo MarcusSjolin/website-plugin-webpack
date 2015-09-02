@@ -8,7 +8,7 @@
   },
   "author": "Marcus Sjölin <marcussjolin@icloud.com>",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "webpack": "^1.11.0"
   }
 }
